@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Calculator | ProfitScopeTools</title>
+    <meta name="description" content="Calculate your side hustle net profit, hourly rate, and profit margin with our easy-to-use tool. Optimize your side business income.">
+    <link rel="stylesheet" href="/src/style.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789943101205596"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">ProfitScopeTools</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/profit-calculator.html" class="active">Profit Calculator</a>
+                <a href="/freelance-rate.html">Freelance Rate Calculator</a>
+                <a href="/tax-calculator.html">Tax Calculator</a>
+                <a href="/roi-calculator.html">ROI Calculator</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Top Ad Slot -->
+    <div class="ad-slot ad-top">
+        <ins class="adsbygoogle"
+             style="display:block;width:100%;min-height:90px"
+             data-ad-client="ca-pub-9789943101205596"
+             data-ad-slot="2710288388"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <div class="container">
+        <div class="grid-2">
+            <!-- Inputs -->
+            <div class="card">
+                <header>
+                    <h1>Profit Calculator</h1>
+                    <p class="description">Calculate your monthly take-home earnings and efficiency score.</p>
+                </header>
+                <div class="input-group">
+                    <label for="revenue">Monthly Revenue ($)</label>
+                    <input type="number" id="revenue" name="revenue" placeholder="2000" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label for="expenses">Monthly Expenses ($)</label>
+                    <input type="number" id="expenses" name="expenses" placeholder="200" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label for="fees">Platform Fees (%)</label>
+                    <input type="number" id="fees" name="fees" placeholder="10" step="0.1">
+                </div>
+                <div class="input-group">
+                    <label for="taxRate">Estimated Tax Rate (%)</label>
+                    <input type="number" id="taxRate" name="taxRate" placeholder="20" step="1">
+                </div>
+                <div class="input-group">
+                    <label for="hours">Hours Worked (Monthly)</label>
+                    <input type="number" id="hours" name="hours" placeholder="40" step="1">
+                </div>
+            </div>
+
+            <!-- Outputs -->
+            <div class="card results-section">
+                <header>
+                    <h1>Analysis Dashboard</h1>
+                    <p class="description">Live projections based on your current inputs.</p>
+                </header>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-label">Net Profit</span>
+                        <span id="out-netProfit" class="result-value" data-format="currency">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Hourly Rate</span>
+                        <span id="out-hourlyRate" class="result-value" data-format="currency">$0.00</span>
+                    </div>
+                </div>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-label">Profit Margin</span>
+                        <span id="out-profitMargin" class="result-value" data-format="percent">0%</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Reality Score</span>
+                        <span id="out-score" class="result-value" data-format="number">0</span>
+                    </div>
+                </div>
+                
+                <div class="score-container">
+                    <div class="result-label">Reality Score</div>
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+
+                <div class="insight-box">
+                    <div class="insight-title">Our Analysis</div>
+                    <div class="insight-text">
+                        Your hourly rate is <strong id="out-hourlyValText">...</strong> and your performance is classified as <span class="tag" id="out-rating">...</span>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="card seo-box">
+                <h2>How to Calculate Side Hustle Profit</h2>
+                <p>Calculating side hustle profit isn't just about subtracting expenses from revenue. To get an accurate picture, you must account for platform fees (like Etsy, Upwork, or Amazon) and set aside money for taxes. A common mistake is ignoring the value of your time. By dividing your net profit by the hours worked, you can determine if your side gig is truly worth the effort or if you should seek higher-paying opportunities.</p>
+            </div>
+
+            <!-- Sidebar Ad Slot -->
+            <div class="ad-slot ad-sidebar">
+                <ins class="adsbygoogle"
+                     style="display:block;width:300px;height:250px"
+                     data-ad-client="ca-pub-9789943101205596"
+                     data-ad-slot="5253737420"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
+            <div class="card seo-box">
+                <h2>Related Tools</h2>
+                <div class="related-tools">
+                    <a href="/freelance-rate.html" class="tool-link">Freelance Rate Calculator</a>
+                    <a href="/tax-calculator.html" class="tool-link">Self-Employment Tax Calculator</a>
+                    <a href="/roi-calculator.html" class="tool-link">Side Hustle ROI Calculator</a>
+                </div>
+            </div>
+
+            <div class="card faq-box">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question">What is a good side hustle profit?</div>
+                    <div class="faq-answer">A "good" profit depends on your goals, but generally, a profit margin above 30-40% is considered healthy for service-based side hustles. For product-based gigs, aim for at least 15-20% after all costs.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I calculate my hourly rate?</div>
+                    <div class="faq-answer">Take your total net profit (after taxes and fees) and divide it by the total number of hours you spent working on the side hustle. This includes administrative work, not just client-facing time.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do I need to include taxes?</div>
+                    <div class="faq-answer">Yes! Self-employment income is taxable. Failing to account for a 15-30% tax liability can lead to a nasty surprise at the end of the year.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Ad Slot -->
+        <div class="ad-slot ad-bottom">
+            <ins class="adsbygoogle"
+                 style="display:block;width:100%;min-height:90px"
+                 data-ad-client="ca-pub-9789943101205596"
+                 data-ad-slot="8638448667"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            &copy; 2026 ProfitScopeTools. Professional financial metrics.
+        </footer>
+    </div>
+
+    <script type="module">
+        import { fillFromUrlParams, setupAutoCalc, formatCurrency, setupAccordions, setupTheme } from '/src/common.js';
+
+        function calculate() {
+            const revenue = parseFloat(document.getElementById('revenue').value) || 0;
+            const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+            const fees = parseFloat(document.getElementById('fees').value) || 0;
+            const tax = parseFloat(document.getElementById('taxRate').value) || 0;
+            const hours = parseFloat(document.getElementById('hours').value) || 0;
+
+            if (revenue === 0 && expenses === 0) return null;
+
+            const fees_amount = revenue * (fees / 100);
+            const profit_before_tax = revenue - expenses - fees_amount;
+            const tax_amount = Math.max(0, profit_before_tax * (tax / 100));
+            const netProfit = profit_before_tax - tax_amount;
+            const hourlyRate = hours > 0 ? netProfit / hours : 0;
+            const profitMargin = revenue > 0 ? (netProfit / revenue) * 100 : 0;
+
+            // Score logic: (hourly_rate * 0.6) + (profit_margin * 0.2) + ((net_profit / revenue) * 20)
+            const score = (hourlyRate * 0.6) + (profitMargin * 0.2) + ((netProfit / Math.max(1, revenue)) * 20);
+
+            let rating = 'Average';
+            if (hourlyRate < 8) rating = 'Low';
+            else if (hourlyRate > 20) rating = 'Strong';
+
+            document.getElementById('out-hourlyValText').textContent = formatCurrency(hourlyRate);
+
+            return {
+                netProfit,
+                hourlyRate,
+                profitMargin,
+                score,
+                rating
+            };
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            fillFromUrlParams();
+            setupTheme();
+            setupAutoCalc(calculate);
+            setupAccordions();
+        });
+    </script>
+</body>
+</html>

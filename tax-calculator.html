@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Employment Tax Calculator | ProfitScopeTools</title>
+    <meta name="description" content="Estimate your annual and monthly tax liability for your self-employed income. Stay prepared for tax season.">
+    <link rel="stylesheet" href="/src/style.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789943101205596"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">ProfitScopeTools</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/profit-calculator.html">Profit Calculator</a>
+                <a href="/freelance-rate.html">Freelance Rate Calculator</a>
+                <a href="/tax-calculator.html" class="active">Tax Calculator</a>
+                <a href="/roi-calculator.html">ROI Calculator</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Top Ad Slot -->
+    <div class="ad-slot ad-top">
+        <ins class="adsbygoogle"
+             style="display:block;width:100%;min-height:90px"
+             data-ad-client="ca-pub-9789943101205596"
+             data-ad-slot="2710288388"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <div class="container">
+        <div class="grid-2">
+            <!-- Inputs -->
+            <div class="card">
+                <header>
+                    <h1>Tax Estimator</h1>
+                    <p class="description">Estimate your tax bill and see how much you actually keep from your hard-earned income.</p>
+                </header>
+                <div class="input-group">
+                    <label for="income">Average Monthly Income ($)</label>
+                    <input type="number" id="income" name="income" placeholder="3000" step="100">
+                </div>
+                <div class="input-group">
+                    <label for="taxRate">Estimated Tax Rate (%)</label>
+                    <input type="number" id="taxRate" name="taxRate" placeholder="25" step="1">
+                </div>
+            </div>
+
+            <!-- Outputs -->
+            <div class="card results-section">
+                <header>
+                    <h1>Analysis Dashboard</h1>
+                    <p class="description">Live projections based on your current inputs.</p>
+                </header>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-label">Annual Tax Amount</span>
+                        <span id="out-annualTax" class="result-value" data-format="currency">$0.00</span>
+                    </div>
+                </div>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-label">Net Annual Income</span>
+                        <span id="out-annualNet" class="result-value" data-format="currency">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Net Monthly Income</span>
+                        <span id="out-monthlyNet" class="result-value" data-format="currency">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="insight-box">
+                    <div class="insight-title">Tax Insight</div>
+                    <div class="insight-text">
+                        You are losing approximately <strong id="out-taxLossPercent">...</strong> of your gross income to taxes. Remember to pay quarterly to avoid penalties.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="card seo-box">
+                <h2>How Self-Employment Taxes Work</h2>
+                <p>When you are self-employed, you are responsible for both the employer and employee portions of social security and medicare taxes, often referred to as the self-employment tax. This is in addition to standard income taxes. Navigating this can be complex, but a good rule of thumb is to set aside 25-30% of your gross earnings in a separate high-yield savings account or pay estimated quarterly taxes to the IRS.</p>
+            </div>
+
+            <!-- Sidebar Ad Slot -->
+            <div class="ad-slot ad-sidebar">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9789943101205596"
+                     data-ad-slot="5253737420"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
+            <div class="card seo-box">
+                <h2>Related Tools</h2>
+                <div class="related-tools">
+                    <a href="/" class="tool-link">Side Hustle Profit Calculator</a>
+                    <a href="/freelance-rate.html" class="tool-link">Freelance Rate Calculator</a>
+                    <a href="/roi-calculator.html" class="tool-link">Side Hustle ROI Calculator</a>
+                </div>
+            </div>
+
+            <div class="card faq-box">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question">What is the self-employment tax rate?</div>
+                    <div class="faq-answer">In the US, the self-employment tax rate is 15.3% (12.4% for social security and 2.9% for medicare). However, you should also account for federal and state income taxes.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I pay my taxes?</div>
+                    <div class="faq-answer">Self-employed workers typically pay estimated taxes four times a year. If you expect to owe more than $1,000, you are generally required to make these quarterly payments.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I write off business expenses?</div>
+                    <div class="faq-answer">Yes! You only pay tax on your *net profit*. This calculator assumes you've already deducted expenses, or it applies the rate to simple gross income. Be sure to track every legitimate business expense to lower your bill.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Ad Slot -->
+        <div class="ad-slot ad-bottom">
+            <ins class="adsbygoogle"
+                 style="display:block;width:100%;min-height:90px"
+                 data-ad-client="ca-pub-9789943101205596"
+                 data-ad-slot="8638448667"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            &copy; 2026 ProfitScopeTools. Professional financial metrics.
+        </footer>
+    </div>
+
+    <script type="module">
+        import { fillFromUrlParams, setupAutoCalc, setupAccordions, setupTheme } from '/src/common.js';
+
+        function calculate() {
+            const income = parseFloat(document.getElementById('income').value) || 0;
+            const taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+
+            if (income === 0) return null;
+
+            const annualIncome = income * 12;
+            const annualTax = annualIncome * (taxRate / 100);
+            const annualNet = annualIncome - annualTax;
+            const monthlyNet = annualNet / 12;
+
+            document.getElementById('out-taxLossPercent').textContent = taxRate + '%';
+
+            return {
+                annualTax,
+                annualNet,
+                monthlyNet
+            };
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            fillFromUrlParams();
+            setupTheme();
+            setupAutoCalc(calculate);
+            setupAccordions();
+        });
+    </script>
+</body>
+</html>

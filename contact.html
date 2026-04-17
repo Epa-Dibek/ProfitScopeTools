@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ProfitScopeTools</title>
+    <meta name="description" content="Contact SideHustle Metric for any inquiries or feedback regarding our side hustle financial tools.">
+    <link rel="stylesheet" href="/src/style.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789943101205596"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">ProfitScopeTools</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/profit-calculator.html">Profit Calculator</a>
+                <a href="/freelance-rate.html">Freelance Rate Calculator</a>
+                <a href="/tax-calculator.html">Tax Calculator</a>
+                <a href="/roi-calculator.html">ROI Calculator</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms</a>
+                <a href="/contact.html" class="active">Contact</a>
+            </div>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Top Ad Slot -->
+    <div class="ad-slot ad-top">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9789943101205596"
+             data-ad-slot="2710288388"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <div class="container">
+        <div class="legal-content">
+            <h1>Contact Us</h1>
+            <p>Have questions, feedback, or suggestions for our side hustle tools? We'd love to hear from you. Reach out to us directly or use the form below.</p>
+            
+            <p><strong>Email:</strong> <a href="mailto:vidovskid@gmail.com">vidovskid@gmail.com</a></p>
+
+            <div class="card contact-card" style="margin-top: 2rem; max-width: 600px;">
+                <form id="contact-form" onsubmit="event.preventDefault(); alert('Message received! (Note: This is a UI demo, no data was sent.)'); this.reset();">
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="How can we help you?" required style="width: 100%; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem; font-family: inherit;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Bottom Ad Slot -->
+        <div class="ad-slot ad-bottom">
+            <ins class="adsbygoogle"
+                 style="display:block;width:100%;min-height:90px"
+                 data-ad-client="ca-pub-9789943101205596"
+                 data-ad-slot="8638448667"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            &copy; 2026 ProfitScopeTools. Professional financial metrics.
+        </footer>
+    </div>
+    <script type="module">
+        import { fillFromUrlParams, setupTheme } from '/src/common.js';
+        window.addEventListener('DOMContentLoaded', () => {
+            fillFromUrlParams();
+            setupTheme();
+        });
+    </script>
+</body>
+</html>

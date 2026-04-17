@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Rate Calculator | ProfitScopeTools</title>
+    <meta name="description" content="Calculate the hourly and daily rates you need to charge to reach your income goals as a freelancer. Don't undersell your skills.">
+    <link rel="stylesheet" href="/src/style.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789943101205596"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">ProfitScopeTools</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/profit-calculator.html">Profit Calculator</a>
+                <a href="/freelance-rate.html" class="active">Freelance Rate Calculator</a>
+                <a href="/tax-calculator.html">Tax Calculator</a>
+                <a href="/roi-calculator.html">ROI Calculator</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Top Ad Slot -->
+    <div class="ad-slot ad-top">
+        <ins class="adsbygoogle"
+             style="display:block;width:100%;min-height:90px"
+             data-ad-client="ca-pub-9789943101205596"
+             data-ad-slot="2710288388"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <div class="container">
+        <div class="grid-2">
+            <!-- Inputs -->
+            <div class="card">
+                <header>
+                    <h1>Freelance Rate Tool</h1>
+                    <p class="description">Stop guessing your rates. Calculate exactly what you need to charge to hit your targets.</p>
+                </header>
+                <div class="input-group">
+                    <label for="desired_income">Desired Monthly Take-Home ($)</label>
+                    <input type="number" id="desired_income" name="desired_income" placeholder="5000" step="100">
+                </div>
+                <div class="input-group">
+                    <label for="expenses">Business Expenses ($/mo)</label>
+                    <input type="number" id="expenses" name="expenses" placeholder="500" step="10">
+                </div>
+                <div class="input-group">
+                    <label for="total_hours">Total Available Hours (Monthly)</label>
+                    <input type="number" id="total_hours" name="total_hours" placeholder="160" step="1">
+                </div>
+                <div class="input-group">
+                    <label for="billable_percentage">Billable Efficiency (%)</label>
+                    <input type="number" id="billable_percentage" name="billable_percentage" placeholder="70" step="1">
+                </div>
+                <div class="input-group">
+                    <label for="taxRate">Estimated Tax Rate (%)</label>
+                    <input type="number" id="taxRate" name="taxRate" placeholder="25" step="1">
+                </div>
+            </div>
+
+            <!-- Outputs -->
+            <div class="card results-section">
+                <header>
+                    <h1>Analysis Dashboard</h1>
+                    <p class="description">Live projections based on your current inputs.</p>
+                </header>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-label">Required Hourly Rate</span>
+                        <span id="out-hourlyRate" class="result-value" data-format="currency">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Daily Rate (8h)</span>
+                        <span id="out-dailyRate" class="result-value" data-format="currency">$0.00</span>
+                    </div>
+                </div>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-label">Monthly Billing Target</span>
+                        <span id="out-monthlyTarget" class="result-value" data-format="currency">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="insight-box">
+                    <div class="insight-title">Rate Analysis</div>
+                    <div class="insight-text">
+                        To hit your <strong id="out-goalText">Goal</strong> with expenses and taxes, you need to bill approximately <strong id="out-rateText">...</strong> per hour.
+                        <br><br>
+                        <span id="out-gapSection" style="font-size: 0.875rem; color: var(--text-secondary);">
+                            Gap Analysis: This is <span id="out-gapPercent">...</span> above/below a standard $50/hr benchmark.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="card seo-box">
+                <h2>How to Set Freelance Rates</h2>
+                <p>Setting your freelance rate is a balance between your financial needs and market value. Many new freelancers fail because they set their rates based on a previous salary, forgetting that as a freelancer, you must cover your own health insurance, equipment, taxes, and "non-billable" time (admin, sales, learning). Use this calculator to work backwards from your desired lifestyle to find a sustainable hourly or daily rate.</p>
+            </div>
+
+            <!-- Sidebar Ad Slot -->
+            <div class="ad-slot ad-sidebar">
+                <ins class="adsbygoogle"
+                     style="display:block;width:300px;height:250px"
+                     data-ad-client="ca-pub-9789943101205596"
+                     data-ad-slot="5253737420"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
+            <div class="card seo-box">
+                <h2>Related Tools</h2>
+                <div class="related-tools">
+                    <a href="/" class="tool-link">Side Hustle Profit Calculator</a>
+                    <a href="/tax-calculator.html" class="tool-link">Self-Employment Tax Calculator</a>
+                    <a href="/roi-calculator.html" class="tool-link">Side Hustle ROI Calculator</a>
+                </div>
+            </div>
+
+            <div class="card faq-box">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question">What is a good billable efficiency?</div>
+                    <div class="faq-answer">Most full-time freelancers aim for 60-80% billable efficiency. The other 20-40% of your time is spent on marketing, bookkeeping, and professional development.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Should I charge by the hour or per project?</div>
+                    <div class="faq-answer">While project-based pricing is often more profitable for experienced freelancers, you still need to know your hourly "floor" (calculated here) to ensure projects are actually profitable.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How often should I raise my rates?</div>
+                    <div class="faq-answer">Review your rates at least once a year or every time your schedule is consistently full. Increasing your rates by 10-20% periodically is standard practice as you gain expertise.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Ad Slot -->
+        <div class="ad-slot ad-bottom">
+            <ins class="adsbygoogle"
+                 style="display:block;width:100%;min-height:90px"
+                 data-ad-client="ca-pub-9789943101205596"
+                 data-ad-slot="8638448667"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            &copy; 2026 ProfitScopeTools. Professional financial metrics.
+        </footer>
+    </div>
+
+    <script type="module">
+        import { fillFromUrlParams, setupAutoCalc, formatCurrency, setupAccordions, setupTheme } from '/src/common.js';
+
+        function calculate() {
+            const desired_income = parseFloat(document.getElementById('desired_income').value) || 0;
+            const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+            const total_hours = parseFloat(document.getElementById('total_hours').value) || 0;
+            const billable_percentage = parseFloat(document.getElementById('billable_percentage').value) || 0;
+            const tax = parseFloat(document.getElementById('taxRate').value) || 0;
+
+            if (desired_income === 0) return null;
+
+            const billable_hours = total_hours * (billable_percentage / 100);
+            const required_income = desired_income + expenses;
+            
+            // pre_tax_rate = required_income / billable_hours
+            // final_rate = pre_tax_rate / (1 - tax_rate/100)
+            const pre_tax_rate = billable_hours > 0 ? required_income / billable_hours : 0;
+            const hourlyRate = pre_tax_rate / (1 - (tax / 100));
+            const dailyRate = hourlyRate * 8;
+            const monthlyTarget = hourlyRate * billable_hours;
+
+            document.getElementById('out-goalText').textContent = formatCurrency(desired_income);
+            document.getElementById('out-rateText').textContent = formatCurrency(hourlyRate);
+            
+            const benchmark = 50;
+            const gap = ((hourlyRate - benchmark) / benchmark) * 100;
+            document.getElementById('out-gapPercent').textContent = `${Math.abs(gap).toFixed(1)}% ${gap >= 0 ? 'above' : 'below'}`;
+
+            return {
+                hourlyRate,
+                dailyRate,
+                monthlyTarget
+            };
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            fillFromUrlParams();
+            setupTheme();
+            setupAutoCalc(calculate);
+            setupAccordions();
+        });
+    </script>
+</body>
+</html>
