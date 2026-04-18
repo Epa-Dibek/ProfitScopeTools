@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Side Hustle Profit Calculator — See Your Real Take-Home Pay | ProfitScopeTools</title>
     <meta name="description" content="Calculate your true side hustle profit after expenses, platform fees, and taxes. Get an hourly rate and efficiency score instantly. Free, no signup required.">
+    <meta name="robots" content="index, follow">
     
     <link rel="canonical" href="https://profitscopetools.pages.dev/profit-calculator.html" />
 
@@ -21,36 +22,47 @@
     <meta name="twitter:image" content="https://profitscopetools.pages.dev/og-image.png" />
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is a good side hustle profit?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A \"good\" profit depends on your goals, but generally, a profit margin above 30-40% is considered healthy for service-based side hustles. For product-based gigs, aim for at least 15-20% after all costs."
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Side Hustle Profit Calculator",
+        "url": "https://profitscopetools.pages.dev/profit-calculator.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "description": "Calculate your true side hustle profit after expenses, platform fees, and taxes. Get an hourly rate and efficiency score instantly."
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a good side hustle profit margin?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For service-based side hustles like freelance writing or consulting, a profit margin above 50% is achievable and healthy. For product-based gigs on platforms like Etsy or Amazon, aim for at least 20-30%."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I calculate my real hourly rate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Take your total net profit (after all expenses, fees, and taxes) and divide it by the total number of hours worked. This includes administrative time, not just direct client work."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I include self-employment taxes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, always. Self-employed workers must pay both the employer and employee portions of social security and medicare, totaling about 15.3% in the US, plus state and federal income tax."
+            }
           }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I calculate my hourly rate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Take your total net profit (after taxes and fees) and divide it by the total number of hours you spent working on the side hustle. This includes administrative work, not just client-facing time."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do I need to include taxes?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! Self-employment income is taxable. Failing to account for a 15-30% tax liability can lead to a nasty surprise at the end of the year."
-          }
-        }
-      ]
-    }
+        ]
+      }
+    ]
     </script>
 
     <link rel="stylesheet" href="/src/style.css">
@@ -59,8 +71,6 @@
             document.documentElement.setAttribute('data-theme', 'dark');
         }
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789943101205596"
-     crossorigin="anonymous"></script>
 </head>
 <body>
     <nav>
@@ -69,12 +79,9 @@
             <div class="nav-links">
                 <a href="/">Home</a>
                 <a href="/profit-calculator.html" class="active">Profit Calculator</a>
-                <a href="/freelance-rate.html">Freelance Rate Calculator</a>
-                <a href="/tax-calculator.html">Tax Calculator</a>
-                <a href="/roi-calculator.html">ROI Calculator</a>
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="/terms.html">Terms</a>
-                <a href="/contact.html">Contact</a>
+                <a href="/freelance-rate.html">Freelance Rate</a>
+                <a href="/tax-calculator.html">Taxes</a>
+                <a href="/roi-calculator.html">ROI</a>
             </div>
             <button class="theme-toggle" aria-label="Toggle theme">
                 <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -82,166 +89,139 @@
             </button>
         </div>
     </nav>
-    
-    <!-- Top Ad Slot -->
-    <div class="ad-slot ad-top">
-        <ins class="adsbygoogle"
-             style="display:block;width:100%;min-height:90px"
-             data-ad-client="ca-pub-9789943101205596"
-             data-ad-slot="2710288388"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
 
-    <div class="container">
-        <div class="grid-2">
-            <!-- Inputs -->
-            <div class="card">
-                <header>
-                    <h1>Profit Calculator</h1>
-                    <p class="description">Calculate your monthly take-home earnings and efficiency score.</p>
-                </header>
-                <div class="input-group">
-                    <label for="revenue">Monthly Revenue ($)</label>
-                    <input type="number" id="revenue" name="revenue" placeholder="2000" step="0.01">
-                </div>
-                <div class="input-group">
-                    <label for="expenses">Monthly Expenses ($)</label>
-                    <input type="number" id="expenses" name="expenses" placeholder="200" step="0.01">
-                </div>
-                <div class="input-group">
-                    <label for="fees">Platform Fees (%)</label>
-                    <input type="number" id="fees" name="fees" placeholder="10" step="0.1">
-                </div>
-                <div class="input-group">
-                    <label for="taxRate">Estimated Tax Rate (%)</label>
-                    <input type="number" id="taxRate" name="taxRate" placeholder="20" step="1">
-                </div>
-                <div class="input-group">
-                    <label for="hours">Hours Worked (Monthly)</label>
-                    <input type="number" id="hours" name="hours" placeholder="40" step="1">
-                </div>
-            </div>
-
-            <!-- Outputs -->
-            <div class="card results-section">
-                <header>
-                    <h1>Analysis Dashboard</h1>
-                    <p class="description">Live projections based on your current inputs.</p>
-                </header>
-                <div class="results-grid">
-                    <div class="result-item">
-                        <span class="result-label">Net Profit</span>
-                        <span id="out-netProfit" class="result-value" data-format="currency">$0.00</span>
+    <div class="container" style="padding-top: 2rem;">
+        <main>
+            <section class="grid-2">
+                <!-- Calculator Card -->
+                <article class="card">
+                    <header>
+                        <h1>Side Hustle Profit Calculator</h1>
+                        <p class="description">Calculate your monthly take-home earnings, efficiency score, and hourly rate with precision.</p>
+                    </header>
+                    <div class="calculator-inputs">
+                        <div class="input-group">
+                            <label for="revenue">Monthly Revenue ($)</label>
+                            <input type="number" id="revenue" name="revenue" placeholder="2500" step="0.01">
+                        </div>
+                        <div class="input-group">
+                            <label for="expenses">Monthly Expenses ($)</label>
+                            <input type="number" id="expenses" name="expenses" placeholder="250" step="0.01">
+                        </div>
+                        <div class="input-group">
+                            <label for="fees">Platform Fees (%) <small>(e.g. Upwork, Etsy, Stripe)</small></label>
+                            <input type="number" id="fees" name="fees" placeholder="10" step="0.1">
+                        </div>
+                        <div class="input-group">
+                            <label for="taxRate">Estimated Tax Rate (%)</label>
+                            <input type="number" id="taxRate" name="taxRate" placeholder="20" step="1">
+                        </div>
+                        <div class="input-group">
+                            <label for="hours">Hours Worked (Monthly)</label>
+                            <input type="number" id="hours" name="hours" placeholder="30" step="1">
+                        </div>
                     </div>
-                    <div class="result-item">
-                        <span class="result-label">Hourly Rate</span>
-                        <span id="out-hourlyRate" class="result-value" data-format="currency">$0.00</span>
-                    </div>
-                </div>
-                <div class="results-grid">
-                    <div class="result-item">
-                        <span class="result-label">Profit Margin</span>
-                        <span id="out-profitMargin" class="result-value" data-format="percent">0%</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Reality Score</span>
-                        <span id="out-score" class="result-value" data-format="number">0</span>
-                    </div>
-                </div>
-                
-                <div class="score-container">
-                    <div class="result-label">Reality Score</div>
-                    <div class="progress-container">
-                        <div class="progress-bar"></div>
-                    </div>
-                </div>
+                </article>
 
-                <div class="insight-box">
-                    <div class="insight-title">Our Analysis</div>
-                    <div class="insight-text">
-                        Your hourly rate is <strong id="out-hourlyValText">...</strong> and your performance is classified as <span class="tag" id="out-rating">...</span>.
+                <!-- Results Card -->
+                <section class="card results-section">
+                    <header>
+                        <h2>Real Earnings Analysis</h2>
+                        <p class="description">Live projections based on your current inputs.</p>
+                    </header>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-label">Net Profit (Monthly)</span>
+                            <span id="out-netProfit" class="result-value" data-format="currency">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Effective Hourly Rate</span>
+                            <span id="out-hourlyRate" class="result-value" data-format="currency">$0.00</span>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-label">Profit Margin</span>
+                            <span id="out-profitMargin" class="result-value" data-format="percent">0%</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Efficiency Score</span>
+                            <span id="out-score" class="result-value" data-format="number">0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="score-container">
+                        <div class="result-label">Efficiency Meter</div>
+                        <div class="progress-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
 
-        <div class="content-section">
-            <div class="card seo-box">
-                <h2>What Is a Good Profit Margin for a Side Hustle?</h2>
-                <p>
-                  For service-based side hustles — freelance writing, design, consulting, coaching — a profit margin above 50% is achievable and healthy, since your main costs are time and software. For product-based gigs selling on platforms like Etsy or Amazon, aim for at least 20–30% after all fees and cost of goods.
-                </p>
-                <p>
-                  The more useful number is your effective hourly rate. A side hustle earning $2,000/month sounds great until you factor in 60 hours of work — that's $33/hour before taxes, roughly minimum wage in many US states once you account for self-employment tax. Use the calculator above to see your real hourly return.
-                </p>
+                    <div class="insight-box">
+                        <div class="insight-title">Business Logic Insight</div>
+                        <div class="insight-text">
+                            Your hourly rate is <strong id="out-hourlyValText">...</strong> and your performance is classified as <span class="tag" id="out-rating">Pending Data</span>. 
+                            Increasing your rate by just 10% could significantly boost your annual net gain.
+                        </div>
+                    </div>
+                </section>
+            </section>
 
-                <h2>How to Calculate Side Hustle Profit</h2>
-                <p>Calculating side hustle profit isn't just about subtracting expenses from revenue. To get an accurate picture, you must account for platform fees (like Etsy, Upwork, or Amazon) and set aside money for taxes. A common mistake is ignoring the value of your time. By dividing your net profit by the hours worked, you can determine if your side gig is truly worth the effort or if you should seek higher-paying opportunities.</p>
-            </div>
+            <section class="content-section card" style="margin-top: 2rem;">
+                <article>
+                    <h2>What Is a Good Profit Margin for a Side Hustle?</h2>
+                    <p>
+                      For service-based side hustles — freelance writing, design, consulting, coaching — a profit margin above 50% is achievable and healthy, since your main costs are time and software. For product-based gigs selling on platforms like Etsy or Amazon, aim for at least 20–30% after all fees and cost of goods.
+                    </p>
+                    <p>
+                      The more useful number is your effective hourly rate. A side hustle earning $2,000/month sounds great until you factor in 60 hours of work — that's $33/hour before taxes, roughly minimum wage in many US states once you account for self-employment tax.
+                    </p>
+                </article>
 
-            <!-- Sidebar Ad Slot -->
-            <div class="ad-slot ad-sidebar">
-                <ins class="adsbygoogle"
-                     style="display:block;width:300px;height:250px"
-                     data-ad-client="ca-pub-9789943101205596"
-                     data-ad-slot="5253737420"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-            
-            <div class="card seo-box">
-                <h2>Related Tools</h2>
-                <div class="related-tools">
-                    <a href="/freelance-rate.html" class="tool-link">Freelance Rate Calculator</a>
-                    <a href="/tax-calculator.html" class="tool-link">Self-Employment Tax Calculator</a>
-                    <a href="/roi-calculator.html" class="tool-link">Side Hustle ROI Calculator</a>
-                </div>
-            </div>
+                <article style="margin-top: 2rem;">
+                    <h2>How to Calculate Side Hustle Profit</h2>
+                    <p>Calculating side hustle profit isn't just about subtracting expenses from revenue. To get an accurate picture, you must account for platform fees (like Etsy, Upwork, or Stripe) and set aside money for taxes. A common mistake is ignoring the value of your time. By dividing your net profit by the hours worked, you can determine if your side gig is truly worth the effort or if you should seek higher-paying opportunities.</p>
+                </article>
 
-            <div class="card faq-box">
+                <article style="margin-top: 2rem;">
+                    <h2>Real-World Use Cases</h2>
+                    <div class="grid-2">
+                        <div>
+                            <h3>Freelance Content Creators</h3>
+                            <p>Track your platform earnings (YouTube, Patreon) against gear investments and editing software costs to see your true takeaway.</p>
+                        </div>
+                        <div>
+                            <h3>E-commerce Sellers</h3>
+                            <p>Calculate your net margin after shipping costs and marketplace fees on platforms like Shopify or eBay.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="card faq-box" style="margin-top: 2rem;">
                 <h2>Frequently Asked Questions</h2>
                 <div class="faq-item">
                     <div class="faq-question">What is a good side hustle profit?</div>
-                    <div class="faq-answer">A "good" profit depends on your goals, but generally, a profit margin above 30-40% is considered healthy for service-based side hustles. For product-based gigs, aim for at least 15-20% after all costs.</div>
+                    <div class="faq-answer">Generally, a profit margin above 30-40% is considered healthy for service-based side hustles. For product-based gigs, aim for at least 15-20% after all costs.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">How do I calculate my hourly rate?</div>
-                    <div class="faq-answer">Take your total net profit (after taxes and fees) and divide it by the total number of hours you spent working on the side hustle. This includes administrative work, not just client-facing time.</div>
+                    <div class="faq-answer">Take your total net profit and divide it by the total number of hours you spent working, including admin and marketing time.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Do I need to include taxes?</div>
-                    <div class="faq-answer">Yes! Self-employment income is taxable. Failing to account for a 15-30% tax liability can lead to a nasty surprise at the end of the year.</div>
+                    <div class="faq-question">Do I need to include self-employment taxes?</div>
+                    <div class="faq-answer">Absolutely. In many regions, self-employment taxes are higher than standard payroll taxes because you pay both portions of social security.</div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Bottom Ad Slot -->
-        <div class="ad-slot ad-bottom">
-            <ins class="adsbygoogle"
-                 style="display:block;width:100%;min-height:90px"
-                 data-ad-client="ca-pub-9789943101205596"
-                 data-ad-slot="8638448667"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
+            </section>
+        </main>
 
         <footer>
             <div class="footer-links">
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="/terms.html">Terms of Service</a>
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
                 <a href="/contact.html">Contact</a>
             </div>
-            &copy; 2026 ProfitScopeTools. Professional financial metrics.
+            <p>&copy; 2026 ProfitScopeTools. Professional financial metrics for freelancers.</p>
         </footer>
     </div>
 
@@ -264,12 +244,11 @@
             const hourlyRate = hours > 0 ? netProfit / hours : 0;
             const profitMargin = revenue > 0 ? (netProfit / revenue) * 100 : 0;
 
-            // Score logic: (hourly_rate * 0.6) + (profit_margin * 0.2) + ((net_profit / revenue) * 20)
             const score = (hourlyRate * 0.6) + (profitMargin * 0.2) + ((netProfit / Math.max(1, revenue)) * 20);
 
             let rating = 'Average';
-            if (hourlyRate < 8) rating = 'Low';
-            else if (hourlyRate > 20) rating = 'Strong';
+            if (hourlyRate < 15) rating = 'Sustainable';
+            else if (hourlyRate > 40) rating = 'Expert Level';
 
             document.getElementById('out-hourlyValText').textContent = formatCurrency(hourlyRate);
 

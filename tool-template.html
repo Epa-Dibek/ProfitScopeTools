@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TOOL_TITLE}} | ProfitScopeTools</title>
+    <meta name="description" content="{{TOOL_DESCRIPTION}}">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://profitscopetools.pages.dev/{{TOOL_SLUG}}.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ProfitScopeTools" />
+    <meta property="og:url" content="https://profitscopetools.pages.dev/{{TOOL_SLUG}}.html" />
+    <meta property="og:title" content="{{TOOL_TITLE}} | ProfitScopeTools" />
+    <meta property="og:description" content="{{TOOL_DESCRIPTION}}" />
+    <meta property="og:image" content="https://profitscopetools.pages.dev/og-image.png" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{TOOL_TITLE}} | ProfitScopeTools" />
+    <meta name="twitter:description" content="{{TOOL_DESCRIPTION}}" />
+    <meta name="twitter:image" content="https://profitscopetools.pages.dev/og-image.png" />
+
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "{{TOOL_NAME}}",
+        "url": "https://profitscopetools.pages.dev/{{TOOL_SLUG}}.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "description": "{{TOOL_DESCRIPTION}}"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {{FAQ_JSON_ENTITIES}}
+        ]
+      }
+    ]
+    </script>
+
+    <link rel="stylesheet" href="/src/style.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Profit<span>Scope</span>Tools</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/profit-calculator.html">Profit Calculator</a>
+                <a href="/freelance-rate.html">Freelance Rate</a>
+                <a href="/tax-calculator.html">Taxes</a>
+                <a href="/roi-calculator.html">ROI</a>
+            </div>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <section class="grid-2">
+                <!-- Calculator Card -->
+                <div class="card">
+                    <header>
+                        <h1>{{TOOL_NAME}}</h1>
+                        <p class="description">{{TOOL_TAGLINE}}</p>
+                    </header>
+                    <div class="input-container">
+                        {{CALCULATOR_INPUTS}}
+                    </div>
+                </div>
+
+                <!-- Results Card -->
+                <div class="card results-section">
+                    <header>
+                        <h2>Your Analysis</h2>
+                        <p class="description">Live projections based on your current inputs.</p>
+                    </header>
+                    <div class="results-grid">
+                        {{CALCULATOR_OUTPUTS}}
+                    </div>
+                    
+                    <div class="insight-box">
+                        <div class="insight-title">Our Expert Analysis</div>
+                        <div class="insight-text">
+                            {{TOOL_INSIGHT_PLACEHOLDER}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section card" style="margin-top: 2rem;">
+                <article>
+                    <h2>How it Works</h2>
+                    {{HOW_IT_WORKS_CONTENT}}
+                </article>
+                
+                <article style="margin-top: 2rem;">
+                    <h2>Common Use Cases</h2>
+                    {{USE_CASES_CONTENT}}
+                </article>
+            </section>
+
+            <section class="card faq-box" style="margin-top: 2rem;">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    {{FAQ_CONTENT}}
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            <p>&copy; 2026 ProfitScopeTools. Professional financial metrics for freelancers.</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { fillFromUrlParams, setupAutoCalc, formatCurrency, setupAccordions, setupTheme } from '/src/common.js';
+        
+        // Tool-specific calculation logic
+        function calculate() {
+            // Logic here
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            fillFromUrlParams();
+            setupTheme();
+            setupAutoCalc(calculate);
+            setupAccordions();
+        });
+    </script>
+</body>
+</html>
