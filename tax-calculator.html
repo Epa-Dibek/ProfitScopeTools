@@ -3,8 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Self-Employment Tax Calculator | ProfitScopeTools</title>
-    <meta name="description" content="Estimate your annual and monthly tax liability for your self-employed income. Stay prepared for tax season.">
+    <title>Self-Employment Tax Calculator for Freelancers | ProfitScopeTools</title>
+    <meta name="description" content="Estimate your self-employment tax bill in seconds. See exactly how much to set aside each month and what you'll keep after federal and self-employment taxes.">
+    
+    <link rel="canonical" href="https://profitscopetools.pages.dev/tax-calculator.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ProfitScopeTools" />
+    <meta property="og:url" content="https://profitscopetools.pages.dev/tax-calculator.html" />
+    <meta property="og:title" content="Self-Employment Tax Calculator for Freelancers | ProfitScopeTools" />
+    <meta property="og:description" content="Estimate your self-employment tax bill in seconds. See exactly how much to set aside each month and what you'll keep after federal and self-employment taxes." />
+    <meta property="og:image" content="https://profitscopetools.pages.dev/og-image.png" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Self-Employment Tax Calculator for Freelancers | ProfitScopeTools" />
+    <meta name="twitter:description" content="Estimate your self-employment tax bill in seconds. See exactly how much to set aside each month and what you'll keep after federal and self-employment taxes." />
+    <meta name="twitter:image" content="https://profitscopetools.pages.dev/og-image.png" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the self-employment tax rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the US, the self-employment tax rate is 15.3% (12.4% for social security and 2.9% for medicare). However, you should also account for federal and state income taxes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I pay my taxes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Self-employed workers typically pay estimated taxes four times a year. If you expect to owe more than $1,000, you are generally required to make these quarterly payments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I write off business expenses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! You only pay tax on your *net profit*. This calculator assumes you've already deducted expenses, or it applies the rate to simple gross income. Be sure to track every legitimate business expense to lower your bill."
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="/src/style.css">
     <script>
         if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -17,7 +65,7 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="/" class="nav-logo">ProfitScopeTools</a>
+            <a href="/" class="nav-logo">Profit<span>Scope</span>Tools</a>
             <div class="nav-links">
                 <a href="/">Home</a>
                 <a href="/profit-calculator.html">Profit Calculator</a>
@@ -100,6 +148,14 @@
 
         <div class="content-section">
             <div class="card seo-box">
+                <h2>How Much Should a Freelancer Set Aside for Taxes?</h2>
+                <p>
+                  A safe rule of thumb for US-based freelancers is to set aside 25–30% of every payment you receive into a separate savings account. This covers the 15.3% self-employment tax (Social Security and Medicare) plus federal and state income tax. If you're in a high-income-tax state like California or New York, lean toward 30–35%.
+                </p>
+                <p>
+                  The IRS expects self-employed workers earning more than $1,000/year in taxes to pay quarterly — in April, June, September, and January. Missing these payments triggers an underpayment penalty even if you pay in full at tax time. Use the estimator above to calculate your quarterly payment amount.
+                </p>
+
                 <h2>How Self-Employment Taxes Work</h2>
                 <p>When you are self-employed, you are responsible for both the employer and employee portions of social security and medicare taxes, often referred to as the self-employment tax. This is in addition to standard income taxes. Navigating this can be complex, but a good rule of thumb is to set aside 25-30% of your gross earnings in a separate high-yield savings account or pay estimated quarterly taxes to the IRS.</p>
             </div>
